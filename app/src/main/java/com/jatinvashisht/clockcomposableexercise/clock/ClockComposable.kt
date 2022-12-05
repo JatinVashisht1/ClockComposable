@@ -35,7 +35,7 @@ fun ClockComposable(
             center = circleCenter,
         )
         for(i in startingPoint .. endingPoint){
-            val angleInRad = (i - startingPoint)* (360/endingPoint) * (PI / 180f).toFloat() - 1
+            val angleInRad = (i - startingPoint) * (360/endingPoint) * (PI / 180f).toFloat() - 1
             Log.d("clockComposable", "angle in radian is $angleInRad")
             val lineStart = Offset(
                 // this means start from 50 dp away from circumference of circle
@@ -75,7 +75,7 @@ fun ClockComposable(
             }
 
             rotate(
-                degrees = hours * (360/60f) + 195
+                degrees = hours * (360/60f) + 0
             ){
                 drawLine(
                     color = clockStyle.hourHandColor,
@@ -86,7 +86,7 @@ fun ClockComposable(
             }
 
             rotate(
-                degrees = seconds * (360/60f) + 180,
+                degrees = seconds * (360/60f) + 8,
             ){
                 drawLine(
                     color = clockStyle.secondHandColor,
@@ -97,7 +97,7 @@ fun ClockComposable(
             }
 
             rotate(
-                degrees = minutes * (360/60f) + 0,
+                degrees = minutes * (360/60f) + 1,
             ){
                 drawLine(
                     color = clockStyle.minuteHandColor,

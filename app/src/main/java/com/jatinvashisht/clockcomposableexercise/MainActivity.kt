@@ -2,6 +2,7 @@ package com.jatinvashisht.clockcomposableexercise
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
@@ -39,10 +40,10 @@ class MainActivity : ComponentActivity() {
                     }
 
                     var hours by remember{
-                        mutableStateOf((milliseconds.value.hour.toFloat()))
+                        mutableStateOf((milliseconds.value.hour.toFloat()/2f))
                     }
 
-
+//                    Log.d("MainActivity", "hours is $hours")
                     BoxWithConstraints(modifier = Modifier.fillMaxSize()){
                         val circleRadius = this.maxWidth - 100.dp
                         LaunchedEffect(key1 = second) {
